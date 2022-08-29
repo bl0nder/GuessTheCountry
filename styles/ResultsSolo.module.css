@@ -1,0 +1,7 @@
+.score {
+    -webkit-text-decoration: #7877C5 solid underline;
+    text-decoration: #7877C5 solid underline;
+    -webkit-text-underline-position: under;
+    text-underline-position: auto;
+  }
+  

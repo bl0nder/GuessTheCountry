@@ -1,3 +1,18 @@
-.heading {
-  font-family: 'Barlow Semi Condensed'
+
+.global {
+  font-family: 'Barlow Semi Condensed';
+}
+
+.flag {
+  border-image: linear-gradient(to right, #BFFFC6, #54EDF7) 1;
+}
+
+.button {
+  border: 4px solid #7877C5;
+  color: #7877C5;
+}
+
+.button:hover {
+  border-color: white;
+  color: white;
 }
