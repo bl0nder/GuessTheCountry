@@ -42,7 +42,7 @@ export default function ResultsPageSolo(props) {
     getId()
     
     return (
-        <main className="flex flex-col justify-center items-center">
+        <main className="flex flex-col min-h-screen h-full justify-center items-center">
             <Confetti numberOfPieces={1000} tweenDuration={10000} recycle={false}/>
             <div className="text-[5rem]">
             🎉<span className={`${styles.score} p-2 pl-4 pr-4 rounded-md`}>Your score: {props.score}/10</span> 🎉

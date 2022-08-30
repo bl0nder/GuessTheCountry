@@ -1,5 +1,7 @@
 .answer {
-    border: 3px solid #7877C5;
+    /* border: 3px solid #7877C5; */
+    background-color: white;
+    color: #11161E;
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -14,7 +16,9 @@
 }
 
 .wrong {
-    border: 3px solid rgb(225 29 72);
+    /* border: 3px solid rgb(225 29 72); */
+    background-color: rgba(225,29,72,0.25);
+    color: #f92f60;
 }
 
 .nextQ {

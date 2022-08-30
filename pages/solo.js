@@ -77,10 +77,10 @@ export default function Solo() {
                 {randomCountry.name === "Svalbard and Jan Mayen" ? "👀 Hint: It's not Norway!" : ""}
             </div>
             <form className="answer flex flex-col">
-                <div className={`${styles.answer} ${correct===1 ? styles.correct : ''} ${correct===0 ? styles.wrong : ''} rounded-md mt-[4rem]`}>
+                <div className={`${styles.answer} ${correct===1 ? styles.correct : ''} ${correct===0 ? styles.wrong : ''} mt-[4rem]`}>
                     <input 
                     placeholder= "Type your answer" 
-                    className={`bg-transparent p-3 pl-5 text-white focus:outline-none placeholder:text-[#7877C5]`}
+                    className={`bg-transparent p-3 pl-5 focus:outline-none placeholder:text-[#11161E] ${(answer === '' && correct!=null)? 'placeholder:text-[#f92f60]' : ''}`}
                     onChange = {(event) => {
                         setAnswer(event.target.value)
                     }}
@@ -93,10 +93,12 @@ export default function Solo() {
                     disabled='disabled'
                     
                     >
-                        {correct === 1 ? '✔' : '❌'}
+                        {correct === 1 ? 
+                        '✔' : 
+                        '❌'}
                     </button> : 
                     <button 
-                    className='bg-transparent text-[#7877C5] submit rounded p-3 pr-5' 
+                    className='bg-transparent text-[#11161E] submit rounded p-3 pr-5' 
                     type='submit'
                     onClick={(event) => {
                         event.preventDefault()

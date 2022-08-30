@@ -3,9 +3,14 @@
 }
 
 .playGame {
-    border: 4px solid #7877C5;
-    color: #7877C5;
-}
+    /* border: 4px solid #7877C5; */
+    background-color: white;
+    color: #11161E;
+    padding: 0.75rem;
+    /* padding-left: 4.5rem;
+    padding-right: 4.5rem; */
+    width: 15rem;
+  }
 
 @-moz-keyframes whirlyLoader {
     0% {

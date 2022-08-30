@@ -33,11 +33,13 @@ export default function Signup() {
 
     return (
         <form 
-        className={`${styles.form} flex flex-col items-center justify-center h-screen bg-black text-white`}>
-            <div className="text-[3rem] font-medium">Please enter your details</div>
-
+        className={`${styles.form} flex flex-col items-center justify-center h-screen bg-[#11161E] text-white`}>
+            <div className="text-center text-[2.5rem] md:text-[3rem] font-medium">
+                Please enter your details
+            </div>
+            <div className="mt-[1rem]"></div>
             <input 
-            className={styles.input} 
+            className={`${styles.input} p-1 pl-[0.5rem] pr-[1rem] md:p-2 md:pl-[1rem] md:pr-[2rem]`} 
             placeholder="Username" 
             required 
             onChange={(event) => {
@@ -48,7 +50,7 @@ export default function Signup() {
             }}>
             </input>
 
-            <input className={styles.input} placeholder="Email" required type="email" onChange={(event) => {
+            <input className={`${styles.input} p-1 pl-[0.5rem] pr-[1rem] md:p-2 md:pl-[1rem] md:pr-[2rem]`} placeholder="Email" required type="email" onChange={(event) => {
                 setNewUserInfo({
                     ...newUserInfo,
                     email: event.target.value
@@ -56,7 +58,7 @@ export default function Signup() {
             }}>
             </input>
 
-            <input className = {styles.input} placeholder="Password" required type="password" onChange={(event) => {
+            <input className = {`${styles.input} p-1 pl-[0.5rem] pr-[1rem] md:p-2 md:pl-[1rem] md:pr-[2rem]`} placeholder="Password" required type="password" onChange={(event) => {
                 setNewUserInfo({
                     ...newUserInfo,
                     password: event.target.value
@@ -65,7 +67,7 @@ export default function Signup() {
             </input>
 
             <button 
-            className="bg-transparent hover:bg-amber-400 hover:text-black text-white mt-[1.5rem] rounded-md p-2 pl-[3rem] pr-[3rem] text-[2rem] font-medium" 
+            className="bg-transparent hover:bg-white hover:text-[#11161E] text-white mt-[1rem] p-1 pl-[1rem] pr-[1rem] md:p-2 md:pl-[2rem] md:pr-[2rem] text-[2rem] font-medium" 
             onClick={async (event) => {
                 
                 event.preventDefault()
@@ -80,7 +82,7 @@ export default function Signup() {
                 
             }}
             type="submit">
-                Signup
+                <span className={styles.underline}>Signup</span>
             </button>
 
         </form>
