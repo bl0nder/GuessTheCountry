@@ -3,22 +3,23 @@ import Login from './login'
 import Signup from './signup'
 import React, { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
-import ProtectedRoute from '../components/ProtectedRoute'
 import { useRouter } from 'next/router'
-import { Link, useNavigate } from 'react-router-dom'
-import Dashboard from './dashboard'
+
 
 export default function Homepage() {
 
   const router = useRouter()
   const [login, setLogin] = useState(false)
   const [signup, setSignup] = useState(false)
+  const [how, setHow] = useState(false)
 
     const {user} = useAuth()
 
     if (user) {
       router.push('/dashboard')
     }
+
+    
 
     else {
       if (login) {
@@ -66,29 +67,37 @@ export default function Homepage() {
           // </div>  
           // </div>
           <div className="min-h-screen h-full grid grid-rows-2">
+            
             <div className={`${styles.global} text-[#11161E] bg-white text-[5rem] md:text-[7rem] mt-auto text-center font-medium`}>
-              Guess the
+              <div className='sm:animate-slidingRight'>Guess the</div>
             </div>
-            <div className={` ${styles.global} text-white text-center text-[5rem] md:text-[7rem] bg-[#11161E] font-medium`}>
-              Country
-            <div className = {`mt-[4rem] flex`}>
-            <button 
-            className={`${styles.button} text-[2.5rem] pl-[2rem] pr-[2rem] md:pl-[4rem] md:pr-[4rem]`}
-            onClick = {() => setLogin(true)}
-            >
-              Login
-            </button>
-            {/* <div className="w-full"></div> */}
-            <button 
-            className={`${styles.button} ml-auto text-[2.5rem] pl-[2rem] pr-[2rem] md:pl-[4rem] md:pr-[4rem]`}
-            onClick = {() => setSignup(true)}
-            >
-              Sign Up 
-            </button>
-          </div> 
+            
+              <div className={` ${styles.global} text-center text-[5rem] md:text-[7rem] bg-[#11161E] font-medium`}>
+                <div className={`sm:animate-slidingLeft text-white `}>Country</div>
+                <div className = {`mt-[4rem] flex items-center justify-center`}>
+              
+                <button 
+                className={`${styles.button} sm:animate-buttonGoRight text-[1.5rem] md:text-[2.5rem] mr-auto pl-[2rem] pr-[2rem] md:pl-[4rem] md:pr-[4rem]`}
+                onClick = {() => setLogin(true)}
+                >
+                  Login
+                </button>
+
+                {/* <button 
+                className={`${styles.button} text-[1.5rem] md:text-[2.5rem] pl-[1rem] pr-[1rem] md:pl-[1.5rem] md:pr-[1.5rem] rounded-full`}
+                onClick = {() => setHow(true)}
+                >
+                  ?
+                </button> */}
+
+                <button 
+                className={`${styles.button} ${styles.buttonGoLeft} text-[1.5rem] md:text-[2.5rem] ml-auto pl-[2rem] pr-[2rem] md:pl-[4rem] md:pr-[4rem]`}
+                onClick = {() => setSignup(true)}
+                >
+                  Sign Up 
+                </button>
+              </div> 
             </div>
-
-
           </div>
         )
       }

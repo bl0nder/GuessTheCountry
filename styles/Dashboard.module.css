@@ -12,6 +12,13 @@
     width: 15rem;
   }
 
+.underline {
+    -webkit-text-decoration: #7877C5 solid underline;
+    text-decoration: #7877C5 solid underline;
+    -webkit-text-underline-position: under;
+    text-underline-position: auto;
+}
+
 @-moz-keyframes whirlyLoader {
     0% {
       -moz-transform: rotate(0deg);

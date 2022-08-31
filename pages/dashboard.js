@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext'
 import { getDocs, query, collection, where } from "firebase/firestore";
 import { db } from '../config/firebase'
 import styles from '../styles/Dashboard.module.css'
+import Ripples from 'react-ripples'
 
 export default function Dashboard() {
 
@@ -55,7 +56,7 @@ export default function Dashboard() {
     
                     <div className="flex justify-center gap-[2rem] md:gap-[12rem]">
                         <button 
-                        className={`${styles.playGame} hover:bg-[#7877C5] hover:text-white hover:border-transparent mt-[2rem] font-medium text-[2.5rem]`}
+                        className={`${styles.playGame} mt-[2rem] font-medium text-[2.5rem]`}
                         onClick = {() => {
                             router.push('/solo')
                         }}
@@ -73,12 +74,12 @@ export default function Dashboard() {
     
                     <div className="flex justify-center mt-[5rem]">
                         <button 
-                        className= "bg-rose-600 font-medium text-[1.5rem] hover:bg-rose-700 text-black p-2 pl-8 pr-8"
+                        className= "hover:bg-rose-600 hover:text-[#11161E] bg-transparent text-rose-500 font-medium text-[1.5rem] p-2 pl-8 pr-8"
                         onClick = {() => {
                             signout()
                             router.push('/')
                         }}>
-                            Sign Out
+                            <span className={styles.underline}>Sign Out</span>
                         </button>
                     </div>
                 </div>

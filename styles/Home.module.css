@@ -9,11 +9,92 @@
 
 .button {
   /* border: 4px solid #7877C5; */
-  color:#11161E;
-  background-color: white;
   font-weight: 500;
+  color: #11161E;
+  background-color: white;
+
+}
+
+.buttonGoRight {
+  animation-name: buttonGoRight;
+  animation-duration: 1s;
+  /* animation-delay: 2s; */
+  animation-iteration-count: 1;
+  /* animation-fill-mode: forwards; */
+}
+
+.buttonGoLeft {
+  animation-name: buttonGoLeft;
+  animation-duration: 1s;
+  /* animation-delay: 2s; */
+  animation-iteration-count: 1;
+  /* animation-fill-mode: forwards; */
 }
 
 .button:hover {
   background-color: #BFFFC6;
+}
+
+.animLeft {
+  animation-name: slidingLeft;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+.animRight {
+  animation-name: slidingRight;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes slidingLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes buttonGoRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+    color:#11161E;
+    background-color: white;
+    font-weight: 500;
+  }
+}
+
+@keyframes buttonGoLeft {
+  0% {
+    color: #11161E;
+    transform: translateX(100%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+    color:#11161E;
+    background-color: white;
+    font-weight: 500;
+  }
+}
+
+@keyframes slidingRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
 }
